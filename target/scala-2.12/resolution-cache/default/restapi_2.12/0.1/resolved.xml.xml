@@ -4,7 +4,7 @@
 		module="restapi_2.12"
 		revision="0.1"
 		status="integration"
-		publication="20210809084905"
+		publication="20210813104536"
 	>
 		<description>
 		RestAPI
@@ -36,5 +36,13 @@
 		<dependency org="com.typesafe.akka" name="akka-stream_2.12" rev="2.5.32" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.akka" name="akka-http_2.12" rev="10.2.4" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.akka" name="akka-http-spray-json_2.12" rev="10.2.4" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.slick" name="slick_2.12" rev="3.3.3" conf="compile->default(compile)"/>
+		<dependency org="org.flywaydb" name="flyway-core" rev="4.2.0" conf="compile->default(compile)"/>
+		<dependency org="com.zaxxer" name="HikariCP" rev="2.7.0" conf="compile->default(compile)"/>
+		<dependency org="org.postgresql" name="postgresql" rev="42.1.4" conf="compile->default(compile)"/>
+		<dependency org="org.slf4j" name="slf4j-nop" rev="1.6.4" conf="compile->default(compile)"/>
+		<dependency org="io.circe" name="circe-core_2.12" rev="0.12.3" conf="compile->default(compile)"/>
+		<dependency org="io.circe" name="circe-generic_2.12" rev="0.12.3" conf="compile->default(compile)"/>
+		<dependency org="io.circe" name="circe-parser_2.12" rev="0.12.3" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

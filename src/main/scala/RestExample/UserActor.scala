@@ -1,12 +1,21 @@
 package RestExample
 import akka.actor.typed._
 import akka.actor.typed.scaladsl.Behaviors
-import scala.collection.immutable
 
-final case class User(name: String, age: Int)
+import scala.collection.immutable
+import slick.jdbc.PostgresProfile.api._
+import slick.lifted.ProvenShape.proveShapeOf
+import slick.lifted._
+
+//final case class User(name: String, age: Int)
+final case class User(name:String, age: Int)
 final case class Users(users: immutable.Seq[User])
 
 object UserActor {
+  val connectionUrl = "jdbc:postgresql://localhost/RestAPI?user=postgres&password=12345"
+
+  Database.forURL(connectionUrl, driver = "org.postgresql.Driver")
+
   sealed trait Command
   final case class GetUsers(replyTo: ActorRef[Users]) extends Command
   final case class CreateUser(user: User, replyTo: ActorRef[ActionPerfomed]) extends Command

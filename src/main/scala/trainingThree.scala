@@ -1,6 +1,7 @@
 import akka.actor.typed.ActorSystem
 import akka.actor.typed.scaladsl.Behaviors
 import akka.http.scaladsl.Http
+import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport
 import akka.http.scaladsl.model._
 import akka.http.scaladsl.server.Directives._
 import scala.util._
@@ -10,7 +11,6 @@ object trainingThree {
   def main(args: Array[String]): Unit = {
     implicit val system = ActorSystem(Behaviors.empty, "system")
     implicit val context = system.executionContext
-
     lazy val homeRoute = {
       get {
         complete(HttpEntity(ContentTypes.`text/plain(UTF-8)`, "This is home page"))
